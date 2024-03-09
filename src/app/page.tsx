@@ -1,11 +1,10 @@
-import { GridBackground } from '@/components/GridBackground'
+import Button from '@/components/Button'
+import { LampMain } from '@/components/Lamp/LampMain'
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="h-screen">
-      <GridBackground title="LS PLANNER">
-        <code>COMING SOON...</code>
-      </GridBackground>
-    </main>
+    <LampMain headerText="LS PLANNER" subText="Shining Light On Loadshedding">
+      <Button className="flex items-center justify-center p-4 rounded-md" text="Get Started" />
+    </LampMain>
   )
 }
