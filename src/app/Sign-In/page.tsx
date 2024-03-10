@@ -8,9 +8,6 @@ export default function SignIn() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-4xl font-bold mb-8">Sign In</h1>
-      <Button loading={isLoading} onClick={refetch}>
-        DO IT
-      </Button>
     </div>
   )
 }
