@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ErrorBoundary>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} bg-white dark:bg-zinc-950`}>
           <ContextProviders>{children}</ContextProviders>
         </body>
       </html>
