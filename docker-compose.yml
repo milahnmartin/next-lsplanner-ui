@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  postgress-db:
+    image: postgres:latest
+    container_name: postgress-db
+    environment:
+      POSTGRES_USER: lsplanner
+      POSTGRES_PASSWORD: lsplanner
+      POSTGRES_DB: lsplanner
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../data:/var/lib/postgresql/data
+    
