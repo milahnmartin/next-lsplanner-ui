@@ -1,21 +1,24 @@
 {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "printWidth": 100,
-    "trailingComma": "all",
-    "arrowParens": "always",
-    "jsxBracketSameLine": false,
-    "jsxSingleQuote": false,
-    "useTabs": false,
-    "endOfLine": "auto",
-    "overrides": [
-      {
-        "files": "*.json",
-        "options": {
-          "printWidth": 120
-        }
-      }
-    ]
-  }
-  
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "useTabs": false,
+  "endOfLine": "auto",
+  "importOrder": ["^\\u0000", "^@\\w", "^[^.]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "overrides": [
+     {
+       "files": "*.json",
+       "options": {
+         "printWidth": 120
+       }
+     }
+  ]
+ }
+ 

@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="m-10 absolute left-0 top-0 right-0 z-50">
       <nav className="gap-10 grid grid-cols-[1fr,2fr,1fr]">
         <Link className="col-span-1 items-center hidden md:flex gap-2 justify-center" href="/">
-          <Image className="" src="/logo.png" alt="logo" width={100} height={100} />
+          <h1 className="text-3xl font-sans tracking-wide">LS PLANNER</h1>
         </Link>
 
         <div className="col-span-1 flex items-center justify-center">
@@ -32,7 +32,12 @@ export default function Navbar() {
               <Button variant={'link'}>Sign In</Button>
             </Link>
             <Link href="/Sign-Up">
-              <Button onClick={async () => await googleSignIn()}>Sign Up</Button>
+              <Button
+                className="rounded-full !bg-white hover:!bg-white/80 !text-black"
+                onClick={async () => await googleSignIn()}
+              >
+                Get Started
+              </Button>
             </Link>
           </div>
         )}

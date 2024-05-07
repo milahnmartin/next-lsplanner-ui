@@ -1,10 +1,14 @@
-import { BackgroundGradient } from '@/components/Background'
+import { Background } from '@/components/Background'
 import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import { Button } from '@/components/ui/button'
 export default function Home() {
   return (
-    <div className="min-h-screen w-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <BackgroundGradient />
+      <Background>
+        <Hero />
+      </Background>
     </div>
   )
 }
