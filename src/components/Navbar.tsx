@@ -24,14 +24,21 @@ export default function Navbar() {
           <NavigationMenuMiddle />
         </div>
         {session.data ? (
-          <ProfileDropDown>
-            <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
+          <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
+            <ProfileDropDown>
               <Avatar className="border-2">
                 <AvatarImage src={session.data?.user?.image ?? ''} />
-                <AvatarFallback>{session.data?.user?.name}</AvatarFallback>
+                <AvatarFallback>
+                  {session.data?.user?.name
+                    ?.split(' ')
+                    .map((char: string) => {
+                      return char[0]
+                    })
+                    .join('')}
+                </AvatarFallback>
               </Avatar>
-            </div>
-          </ProfileDropDown>
+            </ProfileDropDown>
+          </div>
         ) : (
           <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
             <Link href="/auth/signin">
