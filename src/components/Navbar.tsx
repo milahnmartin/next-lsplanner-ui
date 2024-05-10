@@ -7,6 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 import { getUserApiQuotas, getUserCredentials } from '@/hooks/hooks'
+import ProfileDropDown from './ProfileDropDown'
 export default function Navbar() {
   const session = useSession()
   useEffect(() => {
@@ -23,12 +24,14 @@ export default function Navbar() {
           <NavigationMenuMiddle />
         </div>
         {session.data ? (
-          <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
-            <Avatar className="border-2">
-              <AvatarImage src={session.data?.user?.image ?? ''} />
-              <AvatarFallback>{session.data?.user?.name}</AvatarFallback>
-            </Avatar>
-          </div>
+          <ProfileDropDown>
+            <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
+              <Avatar className="border-2">
+                <AvatarImage src={session.data?.user?.image ?? ''} />
+                <AvatarFallback>{session.data?.user?.name}</AvatarFallback>
+              </Avatar>
+            </div>
+          </ProfileDropDown>
         ) : (
           <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
             <Link href="/auth/signin">
