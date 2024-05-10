@@ -4,6 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 import ErrorBoundary from './ErrorBoundary'
 import { ContextProviders } from './ContextProviders'
+import Navbar from '@/components/Navbar'
 export const metadata: Metadata = {
   title: 'LS PLANNER / Home',
   description:
@@ -25,7 +26,10 @@ export default function RootLayout({
     <ErrorBoundary>
       <html lang="en">
         <body className={`${inter.className} bg-white dark:bg-zinc-950`}>
-          <ContextProviders>{children}</ContextProviders>
+          <ContextProviders>
+            <Navbar />
+            {children}
+          </ContextProviders>
         </body>
       </html>
     </ErrorBoundary>

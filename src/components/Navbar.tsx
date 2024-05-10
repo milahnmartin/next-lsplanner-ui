@@ -5,38 +5,38 @@ import { Button } from './ui/button'
 import { NavigationMenuMiddle } from './NavMiddleMenu'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { useSession } from 'next-auth/react'
-import { useGoogleSignin } from '@/app/hooks'
+import { useEffect } from 'react'
+import { getUserApiQuotas, getUserCredentials } from '@/hooks/hooks'
 export default function Navbar() {
   const session = useSession()
-  const googleSignIn = useGoogleSignin()
+  useEffect(() => {
+    if (!session.data) return
+  }, [session])
   return (
-    <header className="m-10 absolute left-0 top-0 right-0 z-50">
+    <header className="absolute left-0 top-0 right-0 z-50 p-10">
       <nav className="gap-10 grid grid-cols-[1fr,2fr,1fr]">
         <Link className="col-span-1 items-center hidden md:flex gap-2 justify-center" href="/">
-          <h1 className="text-3xl font-sans tracking-wide">LS PLANNER</h1>
+          <h1 className="text-lg lg:text-2xl font-bold tracking-wide">LS PLANNER</h1>
         </Link>
 
-        <div className="col-span-1 flex items-center justify-center">
+        <div className="hidden md:flex col-span-1 items-center justify-center">
           <NavigationMenuMiddle />
         </div>
         {session.data ? (
           <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
-            <Avatar>
+            <Avatar className="border-2">
               <AvatarImage src={session.data?.user?.image ?? ''} />
               <AvatarFallback>{session.data?.user?.name}</AvatarFallback>
             </Avatar>
           </div>
         ) : (
           <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
-            <Link href="/Sign-In">
-              <Button variant={'link'}>Sign In</Button>
+            <Link href="/auth/signin">
+              <Button variant="link">Sign In</Button>
             </Link>
-            <Link href="/Sign-Up">
-              <Button
-                className="rounded-full !bg-white hover:!bg-white/80 !text-black"
-                onClick={async () => await googleSignIn()}
-              >
-                Get Started
+            <Link href="/auth/signup">
+              <Button className="rounded-full !bg-white hover:!bg-white/80 !text-black">
+                Get Started <span className="ml-1">{'->'}</span>
               </Button>
             </Link>
           </div>

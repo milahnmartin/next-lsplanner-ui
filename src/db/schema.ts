@@ -39,6 +39,19 @@ export const sessions = pgTable('session', {
   expires: timestamp('expires', { mode: 'date' }).notNull(),
 })
 
+export const api_quotas = pgTable('api_quota', {
+  id: text('id').notNull().primaryKey(),
+  user_id: text('user_id')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  api: text('api').notNull(),
+  count: integer('count').notNull(),
+  limit: integer('limit').notNull(),
+  reset: timestamp('reset', { mode: 'date' }).notNull(),
+  updated_at: timestamp('updated_at', { mode: 'date' }).notNull(),
+  created_at: timestamp('created_at', { mode: 'date' }).notNull(),
+})
+
 export const verificationTokens = pgTable(
   'verificationToken',
   {
@@ -50,3 +63,6 @@ export const verificationTokens = pgTable(
     compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
   }),
 )
+
+export type ApiQuota = typeof api_quotas.$inferSelect
+export type User = typeof users.$inferSelect

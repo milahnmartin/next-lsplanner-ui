@@ -9,7 +9,6 @@
   "jsxSingleQuote": false,
   "useTabs": false,
   "endOfLine": "auto",
-  "importOrder": ["^\\u0000", "^@\\w", "^[^.]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "overrides": [

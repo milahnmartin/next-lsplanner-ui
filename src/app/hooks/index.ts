@@ -13,6 +13,6 @@ export function useSendEmail(): ReturnType<typeof useQuery> {
   })
 }
 
-export function useGoogleSignin(): () => ReturnType<typeof signIn> {
-  return () => signIn('google', { callbackUrl: '/' })
+export function useGoogleSignin(cbURL: string = '/'): () => ReturnType<typeof signIn> {
+  return () => signIn('google', { callbackUrl: cbURL })
 }
