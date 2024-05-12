@@ -2,7 +2,7 @@ import React from 'react'
 import { GlobeDemo } from './GlobeDemo'
 function Hero() {
   return (
-    <div className="container flex flex-col md:flex-row w-full px-2 md:px-8 flex-grow">
+    <div className="container flex flex-col justify-evenly md:justify-stretch md:flex-row w-full px-2 md:px-8 flex-grow">
       <div className="w-full md:w-6/12 flex flex-col justify-center items-center md:items-start space-y-11">
         <p className="bg-clip-text lg:text-6xl md:text-4xl text-5xl text-transparent drop-shadow-2xl bg-gradient-to-r from-white/90 to-white/10">
           LS PLANNER
