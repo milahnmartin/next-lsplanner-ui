@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 import ErrorBoundary from './ErrorBoundary'
 import { ContextProviders } from './ContextProviders'
 import Navbar from '@/components/Navbar'
+import MobileMenu from '@/components/MobileMenu'
 export const metadata: Metadata = {
   title: 'LS PLANNER / Home',
   description:
@@ -28,6 +29,7 @@ export default function RootLayout({
         <body className={`${inter.className}`}>
           <ContextProviders>
             <Navbar />
+            <MobileMenu />
             {children}
           </ContextProviders>
         </body>
