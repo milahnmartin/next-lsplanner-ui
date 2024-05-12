@@ -1,8 +1,8 @@
 import React from 'react'
-import { Background } from '@/components/Background'
+import { BackGround } from '@/components/Background'
 function Profile() {
   return (
-    <Background>
+    <BackGround>
       <div className="flex border-4 w-full">
         <div className="flex flex-col gap-5 items-center justify-center h-screen w-1/3 border-2">
           Left
@@ -11,7 +11,7 @@ function Profile() {
           right
         </div>
       </div>
-    </Background>
+    </BackGround>
   )
 }
 
