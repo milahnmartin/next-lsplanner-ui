@@ -30,11 +30,11 @@ export default function Navbar() {
           <NavigationMenuMiddle />
         </div>
         {session.data ? (
-          <div className="hidden md:block gap-5 items-center col-span-1 justify-center">
+          <div className="hidden md:flex gap-5 items-center col-span-1 justify-center">
             <ProfileDropDown>
               <Avatar className="border-2">
                 <AvatarImage src={session.data?.user?.image ?? ''} />
-                <AvatarFallback>
+                <AvatarFallback className="!bg-white dark:!bg-black dark:!text-white">
                   {session.data?.user?.name
                     ?.split(' ')
                     .map((char: string) => {
