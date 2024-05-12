@@ -54,7 +54,7 @@ export function GlobeDemo() {
   ]
 
   return (
-    <div className="flex items-center justify-center w-[80%] aspect-square">
+    <div className="flex items-center justify-center w-full aspect-square">
       <World data={sampleArcs} globeConfig={globeConfig} />
     </div>
   )
