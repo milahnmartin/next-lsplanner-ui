@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 function Hero() {
   return (
-    <div className="flex flex-col md:flex-row w-full px-2 md:px-8">
+    <div className="container flex flex-col md:flex-row w-full px-2 md:px-8">
       <div className="w-full md:w-8/12 flex flex-col justify-evenly items-center md:items-start space-y-11">
         <p className="bg-clip-text lg:text-6xl md:text-4xl text-3xl text-transparent drop-shadow-2xl bg-gradient-to-r from-white/90 to-white/10">
           LS PLANNER
