@@ -15,7 +15,7 @@ export default function MobileMenu() {
     if (!session.data) return
   }, [session])
   return (
-    <header className="block md:hidden p-10">
+    <header className="block md:hidden p-10 h-[10vh]">
       <nav className="gap-10 grid grid-cols-[1fr,1fr]">
         <Link className="col-span-1 items-center md:flex gap-2 justify-center" href="/">
           <h1 className="text-lg lg:text-2xl font-bold tracking-wide">LS PLANNER</h1>

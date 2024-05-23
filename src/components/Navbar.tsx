@@ -6,13 +6,6 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 import ProfileDropDown from './ProfileDropDown'
-import BurgerMenu from './BurgerMenu'
-
-const menuItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-]
 
 export default function Navbar() {
   const session = useSession()
@@ -20,7 +13,7 @@ export default function Navbar() {
     if (!session.data) return
   }, [session])
   return (
-    <header className="hidden md:block p-10">
+    <header className="hidden md:block p-10 h-[10vh]">
       <nav className="gap-10 grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,2fr,1fr]">
         <Link className="col-span-1 items-center md:flex gap-2 justify-center" href="/">
           <h1 className="text-lg lg:text-2xl font-bold tracking-wide">LS PLANNER</h1>
