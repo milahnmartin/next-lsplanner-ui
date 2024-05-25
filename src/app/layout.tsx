@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <ErrorBoundary>
       <html lang="en">
-        <body className={`${inter.className}`}>
+        <body className={`${inter.className} bg-black`}>
           <ContextProviders>
             <Navbar />
             <MobileMenu />

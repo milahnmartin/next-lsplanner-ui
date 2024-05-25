@@ -16,3 +16,8 @@ export function useSendEmail(): ReturnType<typeof useQuery> {
 export function useGoogleSignin(cbURL: string = '/'): () => ReturnType<typeof signIn> {
   return () => signIn('google', { callbackUrl: cbURL })
 }
+
+// export function useEmailAndPassword(cbURL: string = '/'): () => ReturnType<typeof signIn> {
+//   return ({ email, password }: { email: string; password: string }) =>
+//     signIn('email', { callbackUrl: cbURL }, { email, password })
+// }
